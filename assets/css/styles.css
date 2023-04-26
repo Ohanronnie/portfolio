@@ -884,7 +884,6 @@ header {
 .footer__social {
   color: #fff;
 }
-
 /*========== SCROLL UP ==========*/
 
 .scrollup {
@@ -1190,4 +1189,10 @@ header {
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+}
+@media only screen and (max-width: 768px){
+    .project__img{
+      
+    }
 }
