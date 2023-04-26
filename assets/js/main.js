@@ -1,4 +1,32 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
+const app = document.querySelector('.home__subtitle');
+
+const typewriter = new Typewriter(app, {
+  loop: true,
+  delay: 75,
+});
+
+typewriter
+  .pauseFor(2500)
+  .typeString('Web Developer')
+  .pauseFor(1500)
+  .deleteChars(9)
+  .typeString('Designer')
+  .pauseFor(1500)
+  .deleteChars(12)
+  .typeString('Front end developer')
+  .pauseFor(1500)
+  .deleteChars(19)
+  .typeString('Back end developer')
+  .pauseFor(1500)
+  .deleteChars(18)
+  .typeString('Full stack developer')
+  .pauseFor(1500)
+  .deleteChars(20)
+  .typeString('MERN stack developer')
+  .pauseFor(1500)
+  .deleteChars(20)
+  .start();
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
