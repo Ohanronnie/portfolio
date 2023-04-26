@@ -884,6 +884,7 @@ header {
 .footer__social {
   color: #fff;
 }
+
 /*========== SCROLL UP ==========*/
 
 .scrollup {
@@ -1010,7 +1011,7 @@ header {
 @media screen and (min-width: 768px) {
   .loader {
     font-size: 16vh;
-  }6
+  }
   .container {
     margin-left: auto;
     margin-right: auto;
@@ -1189,10 +1190,4 @@ header {
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-}
-@media only screen and (max-width: 768px){
-    .project__img{
-      
-    }
 }
