@@ -1,0 +1,292 @@
+
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen m-0 p-0 antialiased;
+  }
+}
+
+/* ─── Scroll-triggered reveal animations ─── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children delays */
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; }
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-children.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Hero entrance animations ─── */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes heroSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+    clip-path: inset(10% 10% 10% 10%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes borderDraw {
+  from {
+    opacity: 0;
+    transform: translate(12px, -12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(16px, 16px);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.hero-badge    { animation: heroSlideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both; }
+.hero-title    { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+.hero-subtitle { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+.hero-bio      { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+.hero-cta      { animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; }
+.hero-image    { animation: heroImageReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+.hero-border   { animation: borderDraw 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+
+/* ─── Navbar animation ─── */
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-enter { animation: navSlideDown 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* ─── Timeline grow ─── */
+
+@keyframes timelineGrow {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  background: rgba(45, 45, 45, 0.2);
+}
+
+.timeline-line.animate {
+  animation: timelineGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Skills ticker ─── */
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  min-width: 100%;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Underline draw ─── */
+
+@keyframes drawUnderline {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.draw-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.draw-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #C65D3B;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.draw-underline.visible::after {
+  width: 100%;
+}
+
+/* ─── Section heading line draw ─── */
+
+@keyframes lineExpand {
+  from { width: 0; }
+  to { width: 48px; }
+}
+
+.heading-line {
+  width: 0;
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.visible .heading-line {
+  width: 48px;
+}
+
+/* ─── Custom Scrollbar ─── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F0E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D2D2D;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C65D3B;
+}
+
+/* ─── Selection ─── */
+
+::selection {
+  background: #C65D3B;
+  color: white;
+}
+
+/* ─── Reduced motion ─── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
