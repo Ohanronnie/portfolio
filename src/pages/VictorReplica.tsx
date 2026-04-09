@@ -7,6 +7,7 @@ import {
   ServicesSection,
   ProjectsSection,
   ExperienceSection,
+  EducationSection,
   Footer,
 } from "../components/portfolio";
 
@@ -26,6 +27,7 @@ export function VictorReplica() {
           <ServicesSection />
           <ProjectsSection limit={3} showViewAll />
           <ExperienceSection />
+          <EducationSection />
         </div>
 
         <Footer />

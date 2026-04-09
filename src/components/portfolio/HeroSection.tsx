@@ -1,6 +1,6 @@
 import { FileText, ChevronRight } from "lucide-react";
 import { portfolioData } from "../../data/portfolio";
-import profileImage from "../../titiloyepaul.png";
+import profileImage from "../../assets/profile/titiloye-paul-latest.jpg";
 import resumePdf from "../../TitiloyePaul_CV.pdf";
 
 export function HeroSection() {

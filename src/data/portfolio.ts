@@ -178,10 +178,37 @@ export const portfolioData = {
   },
   experience: [
     {
+      company: "Independent / Contract",
+      role: "Full Stack & Mobile App Developer",
+      period: "March 2024 — Present",
+      description: "Delivering production-ready web and mobile products for clients across logistics, healthcare, and e-commerce domains.",
+      highlights: [
+        "Built and shipped cross-platform apps with React Native/Expo and full-stack web products.",
+        "Designed secure APIs and integrated third-party services including payments, notifications, and messaging.",
+        "Implemented GitHub Actions CI/CD workflows to automate testing and deployment."
+      ]
+    },
+    {
+      company: "Skyinventories",
+      role: "Full Stack Engineer",
+      period: "2025 — Present",
+      description: "Building and maintaining logistics operations software used for shipments, warehouses, and partner workflows.",
+      highlights: [
+        "Delivered key features across tracking, reporting, and operations workflows.",
+        "Implemented reliable data flows for containers, cargo, shipments, and document handling.",
+        "Improved release confidence through containerized deployments and CI/CD automation."
+      ]
+    },
+    {
       company: "Itools AI",
       role: "MERN Stack Developer",
       period: "June 2023 — February 2024",
-      description: "Led the development of server-side applications using Node.js, Express.js, and MongoDB. Built responsive interfaces using Next.js and Tailwind CSS. Explored ways to integrate C++ and native binaries into Node.js."
+      description: "Contributed to backend and frontend product delivery across Node.js services and React/Next.js user interfaces.",
+      highlights: [
+        "Developed and maintained API features with Node.js, Express.js, and MongoDB.",
+        "Built responsive web interfaces with Next.js and Tailwind CSS.",
+        "Explored native integrations for performance-sensitive backend workflows."
+      ]
     }
   ],
   services: [

@@ -5,4 +5,5 @@ export { SkillsTicker } from "./SkillsTicker";
 export { ServicesSection } from "./ServicesSection";
 export { ProjectsSection } from "./ProjectsSection";
 export { ExperienceSection } from "./ExperienceSection";
+export { EducationSection } from "./EducationSection";
 export { Footer } from "./Footer";
