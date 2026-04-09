@@ -136,8 +136,12 @@ const result = await Bun.build({
   ...cliConfig,
 });
 
-// Cloudflare Pages SPA fallback so direct reloads on nested routes work.
-await writeFile(path.join(outdir, "_redirects"), "/* /index.html 200\n", "utf8");
+// SPA fallback rules for known client routes (avoids Cloudflare loop validation on catch-all).
+await writeFile(
+  path.join(outdir, "_redirects"),
+  ["/projects /index.html 200", "/projects/* /index.html 200", ""].join("\n"),
+  "utf8"
+);
 
 const end = performance.now();
 
