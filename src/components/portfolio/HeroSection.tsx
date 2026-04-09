@@ -1,6 +1,5 @@
 import { FileText, ChevronRight } from "lucide-react";
 import { portfolioData } from "../../data/portfolio";
-import profileImage from "../../assets/profile/titiloye-paul-latest.jpg";
 import resumePdf from "../../TitiloyePaul_CV.pdf";
 
 export function HeroSection() {
@@ -10,7 +9,7 @@ export function HeroSection() {
         ENGINEER
       </div>
 
-      <div className="w-full md:w-1/2 relative order-1 md:order-1">
+      <div className="w-full relative order-1 md:order-1">
         <div className="hero-badge font-['JetBrains_Mono'] text-xs tracking-[0.2em] text-[#C65D3B] mb-6 flex items-center gap-2">
           <span className="inline-block w-2 h-2 rounded-full bg-[#C65D3B] animate-pulse" />
           AVAILABLE FOR HIRE
@@ -47,24 +46,15 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="w-full md:w-1/2 flex justify-center md:justify-end order-0 md:order-2">
-        <div className="hero-image relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] group">
-          <div className="hero-border absolute top-4 right-4 w-full h-full border-2 border-[#C65D3B] -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-2" />
+      <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 w-[280px] h-[280px] pointer-events-none">
+        <div className="absolute inset-0 border border-[#2D2D2D]/8" />
 
-          <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-[#2D2D2D] z-20 transition-all duration-300 group-hover:w-10 group-hover:h-10 group-hover:-top-3 group-hover:-left-3" />
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-[#C65D3B] z-20 transition-all duration-300 group-hover:w-10 group-hover:h-10 group-hover:-bottom-3 group-hover:-right-3" />
+        <div className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-[#2D2D2D]/70" />
+        <div className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-[#C65D3B]" />
 
-          <div className="relative w-full h-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out border border-[#2D2D2D]/10 bg-[#EBE7DF]">
-            <div className="absolute inset-0 z-10 opacity-20 bg-[linear-gradient(rgba(45,45,45,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(45,45,45,0.1)_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none" />
-
-            <img
-              src={profileImage}
-              alt="Titiloye Paul - Full Stack Engineer"
-              className="w-full h-full object-cover mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity duration-500"
-            />
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(45,45,45,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(45,45,45,0.05)_1px,transparent_1px)] bg-size-[22px_22px]" />
       </div>
+
     </section>
   );
 }
