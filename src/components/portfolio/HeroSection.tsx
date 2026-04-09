@@ -18,7 +18,7 @@ export function HeroSection() {
 
         <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl font-['Plus_Jakarta_Sans'] font-bold leading-[0.95] tracking-tight mb-4">
           Full Stack<br/>
-          Engineer.
+          Developer.
         </h1>
 
         <p className="hero-subtitle text-3xl md:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans'] font-bold text-[#8a8a8a] leading-tight mb-8">
