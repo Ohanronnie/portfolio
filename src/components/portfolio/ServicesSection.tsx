@@ -34,9 +34,11 @@ export function ServicesSection() {
               {service.description}
             </p>
             <ul className="text-xs font-['JetBrains_Mono'] text-[#2D2D2D]/40 space-y-1.5">
-              {i === 0 && <><li className="hover:text-[#2D2D2D]/70 transition-colors">HTML / CSS / JS</li><li className="hover:text-[#2D2D2D]/70 transition-colors">React / Next.js</li><li className="hover:text-[#2D2D2D]/70 transition-colors">Tailwind CSS</li></>}
-              {i === 1 && <><li className="hover:text-[#2D2D2D]/70 transition-colors">NestJS / Express / Node.js</li><li className="hover:text-[#2D2D2D]/70 transition-colors">PostgreSQL / MongoDB</li><li className="hover:text-[#2D2D2D]/70 transition-colors">Prisma / TypeORM</li><li className="hover:text-[#2D2D2D]/70 transition-colors">Socket.io</li></>}
-              {i === 2 && <><li className="hover:text-[#2D2D2D]/70 transition-colors">Docker / AWS</li><li className="hover:text-[#2D2D2D]/70 transition-colors">CI/CD Pipelines</li><li className="hover:text-[#2D2D2D]/70 transition-colors">System Design</li></>}
+              {service.stack?.map(item => (
+                <li key={`${service.title}-${item}`} className="hover:text-[#2D2D2D]/70 transition-colors">
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         ))}

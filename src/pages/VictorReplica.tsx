@@ -24,7 +24,7 @@ export function VictorReplica() {
 
         <div className="space-y-32 mb-32">
           <ServicesSection />
-          <ProjectsSection />
+          <ProjectsSection limit={3} showViewAll />
           <ExperienceSection />
         </div>
 
