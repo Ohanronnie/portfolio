@@ -1,11 +1,14 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { getProjectBySlug } from "../data/portfolio";
+import { getProjectBySlug, portfolioData } from "../data/portfolio";
 
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const project = slug ? getProjectBySlug(slug) : undefined;
+  const project = slug
+    ? getProjectBySlug(slug) ??
+      (Number.isNaN(Number(slug)) ? undefined : portfolioData.projects.find(item => item.id === Number(slug)))
+    : undefined;
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 

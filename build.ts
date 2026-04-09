@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import plugin from "bun-plugin-tailwind";
 import { existsSync } from "fs";
-import { rm } from "fs/promises";
+import { rm, writeFile } from "fs/promises";
 import path from "path";
 
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
@@ -129,11 +129,15 @@ const result = await Bun.build({
   minify: true,
   target: "browser",
   sourcemap: "linked",
+  publicPath: (cliConfig.publicPath as string) || "/",
   define: {
     "process.env.NODE_ENV": JSON.stringify("production"),
   },
   ...cliConfig,
 });
+
+// Cloudflare Pages SPA fallback so direct reloads on nested routes work.
+await writeFile(path.join(outdir, "_redirects"), "/* /index.html 200\n", "utf8");
 
 const end = performance.now();
 
