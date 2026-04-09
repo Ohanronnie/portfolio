@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 import plugin from "bun-plugin-tailwind";
 import { existsSync } from "fs";
-import { rm, writeFile } from "fs/promises";
+import { rm } from "fs/promises";
 import path from "path";
 
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
@@ -135,30 +135,6 @@ const result = await Bun.build({
   },
   ...cliConfig,
 });
-
-// SPA fallback rules for known client routes (avoid wildcard loops in Wrangler validation).
-const projectRoutes = [
-  "/projects",
-  "/projects/1",
-  "/projects/2",
-  "/projects/3",
-  "/projects/4",
-  "/projects/5",
-  "/projects/6",
-  "/projects/7",
-  "/projects/8",
-  "/projects/skyinventories",
-  "/projects/premier-care-hospital-management",
-  "/projects/skyline-shipping-web-platform",
-  "/projects/hog-ecommerce-platform",
-  "/projects/x-twitter-manager",
-  "/projects/chat-sphere",
-  "/projects/link-management-platform",
-  "/projects/gmail-whatsapp-notifier",
-];
-
-const redirectsContent = projectRoutes.map(route => `${route} /index.html 200`).join("\n") + "\n";
-await writeFile(path.join(outdir, "_redirects"), redirectsContent, "utf8");
 
 const end = performance.now();
 
