@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="80" viewBox="0 0 64 80" fill="none">
+  <defs>
+    <linearGradient id="stem" x1="23" y1="20" x2="44" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171717"/>
+      <stop offset=".3" stop-color="#626262"/>
+      <stop offset=".56" stop-color="#353535"/>
+      <stop offset="1" stop-color="#101010"/>
+    </linearGradient>
+    <linearGradient id="base" x1="13" y1="44" x2="47" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#626262"/>
+      <stop offset=".4" stop-color="#303030"/>
+      <stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="18" y1="9" x2="44" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#747474"/>
+      <stop offset=".4" stop-color="#3d3d3d"/>
+      <stop offset="1" stop-color="#151515"/>
+    </linearGradient>
+    <linearGradient id="needle" x1="31" y1="57" x2="35" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#999"/>
+      <stop offset=".5" stop-color="#ddd"/>
+      <stop offset="1" stop-color="#555"/>
+    </linearGradient>
+  </defs>
+  <path d="M30 54H34L32 75L30 54Z" fill="url(#needle)"/>
+  <path d="M13 47C13 41 22 37 32 37C42 37 51 41 51 47V52C51 58 42 62 32 62C22 62 13 58 13 52V47Z" fill="#171717"/>
+  <ellipse cx="32" cy="47" rx="19" ry="11" fill="url(#base)" stroke="#757575" stroke-width=".6"/>
+  <path d="M23 22H41L39 45C39 49 25 49 25 45L23 22Z" fill="url(#stem)"/>
+  <path d="M16 17H48V23C48 29 41 33 32 33C23 33 16 29 16 23V17Z" fill="#222"/>
+  <ellipse cx="32" cy="17" rx="16" ry="12" fill="url(#cap)" stroke="#888" stroke-width=".7"/>
+  <path d="M20 13C23 8 31 6 37 8" stroke="#aaa" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M16 51C20 56 30 59 40 56" stroke="#888" stroke-opacity=".6" stroke-width=".8" stroke-linecap="round"/>
+</svg>
